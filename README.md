@@ -1,4 +1,4 @@
-# 🌌 PhuriphatTyPeZ3r0 | AGE System Bio Hub
+# 🌌 PhuriphatTyPeZ3r0 | Bio Hub
 
 ![Project Status](https://img.shields.io/badge/Status-Active-brightgreen)
 ![Next.js](https://img.shields.io/badge/Next.js-15%2B-black?logo=next.js)
