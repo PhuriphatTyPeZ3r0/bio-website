@@ -163,9 +163,11 @@ export default function App() {
           Phuriphat Hemakul
         </h1>
         <div className="h-1 w-12 bg-age-cyan mb-4"></div>
-        <p className="text-xs text-age-cyan tracking-[0.2em] font-orbitron uppercase font-bold text-center px-6 opacity-80">
-          Don't beg for things, do it yourself. Or else you won't get anything.
-        </p>
+        <div className="bg-slate-900/50 backdrop-blur-md px-4 py-3 rounded-lg border border-age-cyan/40 w-full max-w-xs mx-auto shadow-[0_0_15px_rgba(34,211,238,0.2)]">
+          <p className="text-[10px] sm:text-xs text-white tracking-widest font-orbitron uppercase font-bold text-center drop-shadow-lg">
+            "Don't beg for things, do it yourself. <br className="hidden sm:block" /> Or else you won't get anything."
+          </p>
+        </div>
       </div>
 
       {/* Section Title */}
