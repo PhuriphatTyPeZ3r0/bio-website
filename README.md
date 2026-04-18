@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌌 PhuriphatTyPeZ3r0 | AGE System Bio Hub
 
-## Getting Started
+![Project Status](https://img.shields.io/badge/Status-Active-brightgreen)
+![Next.js](https://img.shields.io/badge/Next.js-15%2B-black?logo=next.js)
+![React](https://img.shields.io/badge/React-19-blue?logo=react)
+![Three.js](https://img.shields.io/badge/WebGL-Three.js-white?logo=three.js)
+![TailwindCSS v4](https://img.shields.io/badge/TailwindCSS-v4-06B6D4?logo=tailwindcss)
 
-First, run the development server:
+Welcome to the **AGE System Bio Hub**, an ultra-modern, high-tech personal link-in-bio website and portfolio built with Next.js. Designed with a deep passion for Mecha aesthetics (specifically inspired by *Gundam Age-FX*), this project combines cyberpunk HUD elements, real-time 3D interactive canvases, and fluid background effects.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Cyber-HUD Interface**: Fully customized UI elements with neon cyan boundaries, glowing cyber-borders (`c-funnel-glow`), and futuristic Sci-Fi typography (Orbitron).
+- **Interactive 3D Carousel (WebGL)**: A state-of-the-art interactive carousel built with `React Three Fiber`. Displays project/anime cards on an immersive 3D wheel rotating seamlessly around a holographic core.
+- **Dynamic Vanta.js Background**: Integrated `vanta.globe` directly with Three.js to generate an interactive, mouse-tracking cyber-network globe background that gives depth and motion to the site.
+- **Glassmorphism & High Contrast**: Custom CSS utilities overlaying dark slate backgrounds via backdrop-blur, giving it that crisp "Control Panel" feel.
+- **Fully Responsive**: Optimized flawlessly for all displays; from ultrawide monitors to compact mobile phone screens without sacrificing the 3D WebGL experiences.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Technology Stack
 
-## Learn More
+- **Framework**: [Next.js 15 (App Router)](https://nextjs.org/) powered by Turbopack.
+- **UI/Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **3D Engine**: [Three.js](https://threejs.org/) & [React Three Fiber](https://docs.pmnd.rs/react-three-fiber/getting-started/introduction)
+- **Effects**: [React Three Postprocessing](https://docs.pmnd.rs/react-three-fiber/api/events) (Bloom) & [Vanta.js](https://www.vantajs.com/)
+- **Icons**: [React Icons (FontAwesome 6 & Lucide)](https://react-icons.github.io/react-icons/)
 
-To learn more about Next.js, take a look at the following resources:
+## 💻 Getting Started
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To run the AGE System locally on your machine, simply follow these steps:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/PhuriphatTyPeZ3r0/bio-website.git
+   cd bio-website
+   ```
 
-## Deploy on Vercel
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. **Boot Up Sequence:**
+   Open [http://localhost:3000](http://localhost:3000) with your browser to see the AGE System dashboard live.
+
+## 📁 Project Structure highlights
+
+- `/app` - Next.js App Router entry points (`page.tsx`, `layout.tsx`, `globals.css`).
+- `/components` - Contains the specific high-tech UI components:
+  - `TouchCarousel.tsx`: The WebGL interactive spin wheel.
+  - `VantaBackground.tsx`: Setup and hooks for the interactive Vanta globe.
+  - `Button.tsx`: Sci-Fi styled external link buttons.
+- `/public/images` - Directory serving the source images used as 3D card textures limit optimization.
+
+---
+
+*“Advanced Generation Evolution - Don't beg for things, do it yourself. Or else you won't get anything.”*
