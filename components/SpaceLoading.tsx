@@ -71,22 +71,22 @@ export default function SpaceLoading() {
 
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none flex flex-col items-center">
         {/* ข้อความ LOADING */}
-        <h1 className="font-orbitron text-2xl md:text-4xl text-white tracking-[0.5rem] font-bold animate-pulse drop-shadow-[0_0_15px_rgba(34,211,238,0.8)]">
+        <h1 className="font-orbitron text-xl md:text-3xl lg:text-5xl text-white tracking-[0.3rem] md:tracking-[0.5rem] lg:tracking-[0.7rem] font-bold animate-pulse drop-shadow-[0_0_15px_rgba(34,211,238,0.8)]">
           LOADING
         </h1>
 
         {/* เทคนิค 3: ระบบ Progress % ของ Drei */}
-        <div className="mt-4 flex flex-col items-center gap-2">
-          <p className="text-sm text-age-cyan tracking-[0.3em] font-mono opacity-80">
+        <div className="mt-4 md:mt-6 lg:mt-8 flex flex-col items-center gap-2">
+          <p className="text-xs md:text-sm lg:text-base text-age-cyan tracking-[0.15em] md:tracking-[0.3em] font-mono opacity-80 text-center">
             SYSTEM INITIALIZATION
           </p>
-          <div className="w-48 h-[2px] bg-slate-800 rounded-full overflow-hidden">
+          <div className="w-48 md:w-64 lg:w-96 h-[2px] bg-slate-800 rounded-full overflow-hidden">
             <div 
               className="h-full bg-age-cyan shadow-[0_0_10px_#22d3ee] transition-all duration-300 ease-out"
               style={{ width: `${progress}%` }}
             />
           </div>
-          <p className="text-xs text-age-cyan font-mono mt-1 opacity-70">
+          <p className="text-[10px] md:text-xs lg:text-sm text-age-cyan font-mono mt-1 opacity-70">
             {Math.round(progress)}%
           </p>
         </div>
