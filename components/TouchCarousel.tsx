@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Image, Html } from '@react-three/drei';
 import * as THREE from 'three';
@@ -15,6 +15,8 @@ interface CarouselItem {
 
 interface TouchCarouselProps {
   items: CarouselItem[];
+  autoRotate?: boolean;
+  autoRotateInterval?: number;
 }
 
 const CAROUSEL_RADIUS = 2.2;
@@ -87,12 +89,24 @@ function CarouselGroup({ items, rotationTarget }: { items: CarouselItem[]; rotat
   );
 }
 
-export const TouchCarousel = ({ items }: TouchCarouselProps) => {
+export const TouchCarousel = ({ items, autoRotate = true, autoRotateInterval = 4000 }: TouchCarouselProps) => {
   const [rotationTarget, setRotationTarget] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [isInteracting, setIsInteracting] = useState(false);
+
+  useEffect(() => {
+    if (!autoRotate || isInteracting) return;
+    
+    const interval = setInterval(() => {
+      setRotationTarget((r) => r - (Math.PI * 2) / items.length);
+    }, autoRotateInterval);
+    
+    return () => clearInterval(interval);
+  }, [autoRotate, autoRotateInterval, isInteracting, items.length]);
 
   const onPointerDown = (e: React.PointerEvent) => {
     e.stopPropagation();
+    setIsInteracting(true);
     setTouchStart(e.clientX);
   };
 
@@ -103,6 +117,7 @@ export const TouchCarousel = ({ items }: TouchCarouselProps) => {
 
   const onPointerUp = (e: React.PointerEvent) => {
     e.stopPropagation();
+    setIsInteracting(false);
     if (touchStart === null) return;
     const distance = e.clientX - touchStart;
     const minSwipeDistance = 40;
@@ -117,13 +132,23 @@ export const TouchCarousel = ({ items }: TouchCarouselProps) => {
     setTouchStart(null);
   };
 
+  const onPointerLeave = (e: React.PointerEvent) => {
+    onPointerUp(e);
+    setIsInteracting(false);
+  };
+
+  const onPointerEnter = () => {
+    setIsInteracting(true);
+  };
+
   return (
     <div 
       className="w-full h-64 relative cursor-grab active:cursor-grabbing c-funnel-glow rounded-3xl overflow-hidden bg-slate-900/60 backdrop-blur-xl border border-age-cyan/30"
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
       onPointerUp={onPointerUp}
-      onPointerLeave={onPointerUp}
+      onPointerLeave={onPointerLeave}
+      onPointerEnter={onPointerEnter}
       style={{ touchAction: 'none' }} // Prevent scrolling while swiping
     >
       {/* Interactive 3D Canvas */}

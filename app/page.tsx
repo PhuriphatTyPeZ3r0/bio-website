@@ -1,6 +1,8 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import SpaceLoading from '@/components/SpaceLoading';
 import { 
   MoreHorizontal 
 } from 'lucide-react';
@@ -17,6 +19,15 @@ import { TouchCarousel } from '@/components/TouchCarousel';
 import { VantaBackground } from '@/components/VantaBackground';
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const username = "PhuriphatTyPeZ3r0";
   
   const carouselItems = [
@@ -135,6 +146,10 @@ export default function App() {
       url: 'https://ngl.link/arm_phx',
     },
   ];
+
+  if (isLoading) {
+    return <SpaceLoading />;
+  }
 
   return (
       <div className="min-h-screen bg-transparent flex justify-center items-start p-4 sm:p-8 relative overflow-hidden text-white font-prompt">
